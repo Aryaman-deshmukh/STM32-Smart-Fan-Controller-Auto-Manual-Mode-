@@ -1,0 +1,11 @@
+// === LCD Update Function ===
+void update_LCD_display()
+{
+  char line1[16], line2[16];
+  snprintf(line1, 16, "Temp: %3dC", temperature);
+  snprintf(line2, 16, "%s %3d%%", mode ? "Manual" : "Auto", mode ? manual_speed : (temperature > 25 ? (temperature - 25) * 10 : 0));
+  LCD_Set_Cursor(1, 1);
+  LCD_Print(line1);
+  LCD_Set_Cursor(2, 1);
+  LCD_Print(line2);
+}
