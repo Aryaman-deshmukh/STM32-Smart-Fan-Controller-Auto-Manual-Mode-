@@ -1,0 +1,5 @@
+// === Fan Speed Control Function ===
+void set_fan_speed(uint8_t speed)
+{
+  __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, speed);
+}
