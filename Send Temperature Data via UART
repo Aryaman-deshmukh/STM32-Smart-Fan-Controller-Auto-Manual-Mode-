@@ -1,0 +1,7 @@
+// === UART Function to Send Temperature ===
+void send_temperature_uart(uint16_t temp)
+{
+  char uart_buffer[50];
+  snprintf(uart_buffer, sizeof(uart_buffer), "Temperature: %dC\r\n", temp);
+  HAL_UART_Transmit(&huart2, (uint8_t *)uart_buffer, strlen(uart_buffer), HAL_MAX_DELAY);
+}
