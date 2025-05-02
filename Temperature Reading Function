@@ -1,0 +1,8 @@
+// === Temperature Reading Function ===
+uint16_t read_temperature()
+{
+  HAL_ADC_Start(&hadc1);
+  HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
+  uint32_t adc_val = HAL_ADC_GetValue(&hadc1);
+  return (adc_val * 330) / 4096; // LM35: 10mV/°C, ADC: 12-bit
+}
