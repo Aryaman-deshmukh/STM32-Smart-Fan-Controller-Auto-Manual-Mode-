@@ -1,0 +1,11 @@
+// === EXTI Callbacks for Button Press ===
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+  if (GPIO_Pin == GPIO_PIN_0) // Mode Toggle
+    mode = !mode;
+  else if (GPIO_Pin == GPIO_PIN_1 && mode == 1) // Speed Adjust (Manual Only)
+  {
+    manual_speed += 10;
+    if (manual_speed > 100) manual_speed = 0;
+  }
+}
