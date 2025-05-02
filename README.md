@@ -12,7 +12,7 @@ This project is a Smart Fan Controller system built using the STM32 microcontrol
 
 - **LCD Display**: A 16x2 LCD is used to display the current temperature, fan speed, and the selected mode (Auto or Manual).
 
-- **UART Communication**: UART is used to communicate with external sensors (if applicable) to transfer data such as temperature readings or other sensor information, allowing for further integration or monitoring.
+- **UART Communication**: UART is used to communicate with external sensors to transfer data such as temperature readings or other sensor information, allowing for further integration or monitoring.
 
 ## ⚙️ How It Works:
 
